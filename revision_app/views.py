@@ -6,7 +6,7 @@ from revision_app.models import GatoModel
 # Create your views here.
 
 def inicio(request):
-    return render(request,'inicio/inicio.html')
+    return render(request,'htmls/inicio.html')
 
 def crear_gato(request):
     mensaje=''
@@ -19,7 +19,7 @@ def crear_gato(request):
             form=CrearGatoForm()
             mensaje=f'se creo el gato :{gato.nombre}'
         else:
-            return render(request,'inicio/crear_gato.html',{'formulario':form})
+            return render(request,'htmls/crear_gato.html',{'formulario':form})
     
     form=CrearGatoForm()
-    return render(request,'inicio/crear_gato.html',{'formulario':form,'mensaje':mensaje})
+    return render(request, 'htmls/crear_gato.html',{'formulario':form,'mensaje':mensaje})
